@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/PatrickWMoore88/EvernoteClone/issues"
   },
-  "homepage": "https://github.com/PatrickWMoore88/EvernoteClone#readme"
+  "homepage": "https://github.com/PatrickWMoore88/EvernoteClone#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
 }
