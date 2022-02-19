@@ -2,24 +2,33 @@ const express = require("express");
 const app = express();
 require("dotenv").config({path: ".env"});
 
+const addNote = require("./routes/addNote");
+const deleteNote = require("./routes/deleteNote");
+const editNote = require("./routes/editNote");
+const getNote = require("./routes/getNote");
+
 app.get("/", (req, res) => {
-    res.send("Hello World")
+    res.send("Hello World");
 })
 
 app.get("/addNote", (req, res) => {
-    console.log("Note Added")
+    addNote.addNote();
+
+    let note = req.query.note;
+    console.log(note);
+    
 })
 
 app.get("/getNote", (req, res) => {
-    console.log("Note Gotted")
+    getNote.getNote();
 })
 
 app.get("/editNote", (req, res) => {
-    console.log("Note Edited")
+    editNote.editNote();
 })
 
 app.get("/deleteNote", (req, res) => {
-    console.log("Note Deleted")
+    deleteNote.deleteNote();
 })
 
 app.listen(process.env.PORT, () => console.log(`App listening on Port ${process.env.PORT}`))
