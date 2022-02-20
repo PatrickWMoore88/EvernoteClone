@@ -1,11 +1,14 @@
 const express = require("express");
 const app = express();
+const cors = require("cors")
 require("dotenv").config({path: ".env"});
 
 const addNote = require("./routes/addNote");
 const deleteNote = require("./routes/deleteNote");
 const editNote = require("./routes/editNote");
 const getNote = require("./routes/getNote");
+
+app.use(cors({credentials: true, origin: true}))
 
 app.get("/", (req, res) => {
     res.send("Hello World");
