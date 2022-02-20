@@ -17,11 +17,18 @@ const dbConnection = mysql.createConnection({
 
 dbConnection.connect(function(err) {
     if (err) throw err;
-    console.log("Connected!");
+    console.log("DB Connected!");
+    let sql = "use evernoteclonedb"
+    dbConnection.query(sql);
 });
 
 app.get("/", (req, res) => {
-    res.send("Hello World");
+    let sqlQuery = "SELECT FirstName FROM users where UserID='1';"
+    dbConnection.query(sqlQuery, function (err, result) {
+        if (err) throw err;
+        console.log(result);
+        res.send(result);
+    });
 })
 
 app.get("/addNote", (req, res) => {
@@ -29,7 +36,6 @@ app.get("/addNote", (req, res) => {
 
     let note = req.query.note;
     console.log(note);
-    
 })
 
 app.get("/getNote", (req, res) => {
