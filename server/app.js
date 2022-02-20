@@ -2,12 +2,15 @@ require("dotenv").config({path: ".env"});
 const express = require("express");
 const app = express();
 
+const cors = require("cors")
 const mysql = require("mysql");
 
 const addNote = require("./routes/addNote");
 const deleteNote = require("./routes/deleteNote");
 const editNote = require("./routes/editNote");
 const getNote = require("./routes/getNote");
+
+app.use(cors({credentials: true, origin: true}))
 
 const dbConnection = mysql.createConnection({
     host: process.env.HOST,
