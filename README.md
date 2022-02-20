@@ -1,4 +1,4 @@
-"In Root Directory Add .gitignore file and paste in this info...
+"In Root Directory Add .gitignore file and paste in this info..."
 
 # Server
 node_modules
@@ -26,4 +26,3 @@ node_modules
 /client/evernote-clone/npm-debug.log*
 /client/evernote-clone/yarn-debug.log*
 /client/evernote-clone/yarn-error.log*
-" 
