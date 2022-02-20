@@ -1,11 +1,24 @@
+require("dotenv").config({path: ".env"});
 const express = require("express");
 const app = express();
-require("dotenv").config({path: ".env"});
+
+const mysql = require("mysql");
 
 const addNote = require("./routes/addNote");
 const deleteNote = require("./routes/deleteNote");
 const editNote = require("./routes/editNote");
 const getNote = require("./routes/getNote");
+
+const dbConnection = mysql.createConnection({
+    host: process.env.HOST,
+    user: process.env.ROOT,
+    password: process.env.ROOT_PASSWORD
+})
+
+dbConnection.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+});
 
 app.get("/", (req, res) => {
     res.send("Hello World");
