@@ -1,29 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import {Route, Routes} from 'react-router-dom'
+
+import LoginPage from './login/Login';
+import LandingPage from './components/Landing';
+import NotesPage from './notes/Notes';
 
 function App() {
-  let Click = () => {
-    let response = fetch('http://localhost:8080/getNote')
-    .then((data) => console.log("Axios complete"))
-  }
-
+  
   return (
-    <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-      <button name="button" value="Ok" type="button" onClick={Click}>Click Me</button>
+    <div>
+      <Routes>
+        <Route path='/' element={<LandingPage />} />
+        <Route path='/notes' element={<NotesPage />} />
+        <Route path='/login' element={<LoginPage />} />
+      </Routes>
+      
     </div>
   );
 }
