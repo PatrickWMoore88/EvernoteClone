@@ -1,4 +1,4 @@
-import Editor from "./Editor";
+import Editor from "./editor/Editor";
 import Sidebar from "./Sidebar";
 const DUMMY_DATA = [
   {
@@ -16,8 +16,8 @@ const DUMMY_DATA = [
 function NotesPage() {
   return (
     <div>
-      <Sidebar />
-      <Editor />
+      <Sidebar noteProp={DUMMY_DATA}/>
+      <Editor noteText={DUMMY_DATA}/>
     </div>
   );
 }
