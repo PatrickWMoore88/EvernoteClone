@@ -15,7 +15,7 @@ const DUMMY_DATA = [
 
 function NotesPage() {
   return (
-    <div>
+    <div className="app-container">
       <Sidebar noteProp={DUMMY_DATA}/>
       <Editor noteText={DUMMY_DATA}/>
     </div>

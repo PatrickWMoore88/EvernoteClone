@@ -1,0 +1,41 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  #root, #root>div {
+    height: 100%
+  }
+
+  #evernote-container {
+    height: 100%;
+    box-sizing: border-box;
+  }
+  .app-container {
+    height: 100%;
+    box-sizing: border-box;
+  }
+  .quill {
+    height: 100%;
+    box-sizing: border-box;
+    width: calc(100% - 300px);
+    float: left;
+  }
+  .ql-container {
+    box-sizing: border-box;
+     height: calc(100% - 42px); 
+    overflow-y: scroll;
+    height: 100%
+  }
+  .ql-editor {
+    cursor: text;
+  }
+
+ /*  .Editor {
+    height: '100%';
+    box-sizing: 'border-box';
+} */
