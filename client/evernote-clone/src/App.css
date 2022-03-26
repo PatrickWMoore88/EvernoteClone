@@ -35,7 +35,7 @@ html, body {
     cursor: text;
   }
 
- /*  .Editor {
+  .Editor {
     height: '100%';
     box-sizing: 'border-box';
-} */
+}

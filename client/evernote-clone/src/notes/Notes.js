@@ -1,5 +1,5 @@
 import Editor from "./editor/Editor";
-import Sidebar from "./Sidebar";
+import Sidebar from "./sidebar/Sidebar";
 const DUMMY_DATA = [
   {
     id: 1,
@@ -17,7 +17,7 @@ function NotesPage() {
   return (
     <div className="app-container">
       <Sidebar noteProp={DUMMY_DATA}/>
-      <Editor noteText={DUMMY_DATA}/>
+      <Editor noteProp={DUMMY_DATA[0]}/>
     </div>
   );
 }
