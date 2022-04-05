@@ -1,41 +1,3 @@
-/* import React, { Component } from "react";
-import ReactQuill from "react-quill";
-
-import debounce from "../Helpers";
-import styles from "./Editor.module.css";
-import "react-quill/dist/quill.snow.css";
-
-class Editor extends Component {
-  constructor() {
-    super();
-    this.state = {
-      text: "",
-    };
-  }
-
-  render() {
-    return (
-      <div className={styles.editorContainer}>
-        <ReactQuill
-          theme="snow"
-          value={this.state.text}
-          onChange={this.updateBody}
-        />
-      </div>
-    );
-  }
-
-  updateBody = async (val) => {
-    await this.setState({ text: val });
-    this.update();
-  };
-
-  update = debounce(() => {
-    console.log("User is updating");
-  }, 2000);
-}
-export default Editor; */
-
 import React, { useState, useMemo, useEffect } from "react";
 import "react-quill/dist/quill.snow.css";
 import ReactQuill from "react-quill";
@@ -46,11 +8,12 @@ import classes from "./Editor.module.css";
 function Editor(props) {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
+  const [noteId, setNoteId] =useState("")
 
   useEffect(() => {
-    setTitle(props.noteProp.title);
-    setText(props.noteProp.body);
-  }, [props.noteProp.title, props.noteProp.body]);
+    setTitle(props._selectedNote.title);
+    setText(props._selectedNote.body);
+  }, [props._selectedNote.title, props._selectedNote.body]);
 
   const changeTextHandler = (text) => {
     setText(text);
@@ -59,6 +22,7 @@ function Editor(props) {
 
   const changeTitleHandler = (e) => {
     setTitle(e.target.value);
+    debouncedUpdate();
   };
 
   const updateHandler = () => {
